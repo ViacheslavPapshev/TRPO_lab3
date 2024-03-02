@@ -14,12 +14,24 @@ namespace TestProject_lab_3
             double s1 = 2.5;
             double s2 = 3.5;
             double h = 17;
+            
 
             var res = Class1.VolumeCon(s1, s2, h);
 
-            Console.WriteLine(res);
             double est = 2.9;
             Assert.AreEqual(est, res, 0.1);
+        }
+        [Test]
+        public void Test2()
+        {
+            double s1 = -2.5;
+            double s2 = 3.5;
+            double h = 17;
+            Exception ex = Assert.Throws<Exception>(
+            () => Class1.VolumeCon(s1, s2, h));
+
+
+
         }
     }
 }
