@@ -27,8 +27,10 @@ namespace TestProject_lab_3
             double s1 = -2.5;
             double s2 = 3.5;
             double h = 17;
-            Exception ex = Assert.Throws<Exception>(
-            () => Class1.VolumeCon(s1, s2, h));
+            Assert.Throws<Exception>(
+            () => Class1.VolumeCon(s1, s2, h)
+            );
+
 
 
 
