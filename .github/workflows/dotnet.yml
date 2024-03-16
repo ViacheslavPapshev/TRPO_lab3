@@ -26,3 +26,18 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Dotnet Publish
+      run: dotnet publish
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        path: build
+        name: build-files
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps: 
+      - name: get build project
+        uses: actions/download-artifact@v3
+        with:
+          name: build-files
