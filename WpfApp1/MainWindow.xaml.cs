@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,23 +21,15 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            if(Height.Text == "")
-            {
-                Height.Text = "0";
-            }
-            if (Square_1.Text == "")
-            {
-                Square_1.Text = "0";
-            }
-            if (Square_2.Text == "")
-            {
-                Square_2.Text = "0";
-            }
-            if (Height.Text!="" && Square_1.Text!="" && Square_2.Text!="")
-            {
-                var vm = new MainWindowViewModel();
-                DataContext = vm;
-            }
+
+            
+
+
+            var vm = new MainWindowViewModel();
+
+
+            this.DataContext = vm;
+
             
         }
 

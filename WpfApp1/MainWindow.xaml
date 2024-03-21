@@ -8,24 +8,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="grid">
-        <TextBox x:Name="Height" HorizontalAlignment="Left" Height="25" Margin="78,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="130" TextChanged="Height_TextChanged" Text="{Binding Height}">
+        <Grid.DataContext>
+            <local:MainWindowViewModel/>
+        </Grid.DataContext>
+        <TextBox x:Name="Height" HorizontalAlignment="Left" Height="25" Margin="78,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="130" TextChanged="Height_TextChanged" Text="{Binding Height, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             <TextBox.DataContext>
                 <local:MainWindowViewModel/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="Square_1" Text="{Binding Square_1}" HorizontalAlignment="Left" Height="25" Margin="230,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="122" TextChanged="Square_1_TextChanged">
+        <TextBox x:Name="Square_1" Text="{Binding Square_1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="25" Margin="230,96,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="122" TextChanged="Square_1_TextChanged" >
             <TextBox.DataContext>
                 <local:MainWindowViewModel/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="Square_2" Text="{Binding Square_2}" HorizontalAlignment="Left" Height="24" Margin="378,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="148" TextChanged="Square_2_TextChanged">
+        <TextBox x:Name="Square_2" Text="{Binding Square_2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="24" Margin="378,97,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="148" TextChanged="Square_2_TextChanged">
             <TextBox.DataContext>
                 <local:MainWindowViewModel/>
             </TextBox.DataContext>
         </TextBox>
-        <TextBox x:Name="Result" Text="{Binding Result}" HorizontalAlignment="Left" Height="25" Margin="263,192,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="179" TextChanged="Result_TextChanged">
+        <TextBox x:Name="Result" Text="{Binding Result}" HorizontalAlignment="Left" Height="25" Margin="221,192,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="179" TextChanged="Result_TextChanged">
             <TextBox.DataContext>
-                <local:MainWindowViewModel/>
+                <local:MainWindowViewModel/>    
             </TextBox.DataContext>
         </TextBox>
 
