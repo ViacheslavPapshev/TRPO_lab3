@@ -15,26 +15,27 @@ namespace WpfApp1
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = "")
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
-            }
-            
+            //if (PropertyChanged != null)
+            //{
+                
+            //}
+            PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
+
         }
 
-        private double result;
+        private double result ;
 
         private double square_1;
 
-        private double square_2;
+        private double square_2 ;
 
         private double height;
 
-        public double Height { get { return height; } set { height = value; Result = Class1.VolumeCon(height, square_1, square_2); OnPropertyChanged(nameof(Height)); } }
+        public double Height { get { return height; } set { height = value; Console.WriteLine(height); OnPropertyChanged(nameof(Height)); Result = Class1.VolumeCon(height, square_1, square_2);  } }
 
-        public double Square_1 { get { return square_1; } set { square_1 = value; Result = Class1.VolumeCon(height, square_1, square_2); OnPropertyChanged(nameof(Square_1)); } }
+        public double Square_1 { get { return square_1; } set { square_1 = value; OnPropertyChanged(nameof(Square_1));  Result = Class1.VolumeCon(height, square_1, square_2);  } }
 
-        public double Square_2 { get { return square_2; } set { square_2 = value; Result = Class1.VolumeCon(height, square_1, square_2); OnPropertyChanged(nameof(Square_2)); } }
+        public double Square_2 { get { return square_2; } set { square_2 = value; OnPropertyChanged(nameof(Square_2)); Result = Class1.VolumeCon(height, square_1, square_2);  } }
         public double Result { get { return result;} set { result = value; OnPropertyChanged(nameof(Result)); } }
 
         //public MainWindowViewModel(double height, double square_1, double square_2)
