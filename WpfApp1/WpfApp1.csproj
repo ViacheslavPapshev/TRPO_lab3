@@ -9,8 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Image1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ClassLibrary_lab_3\TRPO_lab3.ClassLibrary.csproj" />
     <ProjectReference Include="..\WebApplication1\WebApplication1.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Image1.png" />
   </ItemGroup>
 
 </Project>
