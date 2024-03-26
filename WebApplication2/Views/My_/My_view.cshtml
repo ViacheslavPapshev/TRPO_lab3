@@ -1,13 +1,7 @@
 ﻿@model WebApplication2.Models.Presentation_Model
 @{
     ViewData["Title"] = "My_view";
-    // void Disp(double data)
-    // {
-    //     return <p>Установленное значение = @data</p>
-    // }
 }
-
-
 <!doctype html>
 <html lang="ru">
 <head>
@@ -16,16 +10,17 @@
 </head>
 <body>
    <h1>Расчет объема усеченного конуса</h1>
-   <h3>Высота ,    1 основние,    2 основание</h3>
-
-   <div class = "My">
-       <input name="Visota" placeholder="Введите высоту конуса" value= @Model.Height />
-       <input name="Osnovanie1" placeholder="Введите 1 основание конуса" value= @Model.Square_1 />
-       <input name="Osnovanie2" placeholder="Введите 2 основание конуса" value= @Model.Square_2 />
-   </div>
-
-   <h3>Результат расчета</h3>
-   <textarea>@Model.Result </textarea>
+   <h3>Высота ,       1 основние,        2 основание</h3>
+   <form asp-action="My_view">
+            <div class = "input">
+                <input asp-for="Height" placeholder="Введите высоту конуса"/>
+                <input asp-for="Square_1" placeholder="Введите 1 основание конуса"/>
+                <input asp-for="Square_2" placeholder="Введите 2 основание конуса"/>
+            </div>
+                <h3>Результат расчета</h3>
+                <input asp-for="Result"/>
+                <input type="submit" value="Calculate conus volume"/>
+   </form>
    <img class="conus"  src="~/img/Image1.png"/>
    <img class="formula" src="~/img/Image2.png"/>
 </body>

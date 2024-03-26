@@ -4,72 +4,20 @@ using System.Runtime.CompilerServices;
 
 namespace WebApplication2.Models
 {
-    public class Presentation_Model : INotifyPropertyChanged
+    public class Presentation_Model
     {
-        private double result;
+        public double Height { get; set; }
+        public double Square_1 { get; set; }
+        public double Square_2 { get; set; }
 
-        private double square_1;
+        public double Result { get; set; }
 
-        private double square_2;
-
-        private double height;
-
-        public double Height
+        public Presentation_Model (double height, double square_1, double square_2, double result)
         {
-            get { return height; }
-            set
-            {
-                height = value;
-                OnPropertyChanged(nameof(Height));
-                Result = Class1.VolumeCon(height, square_1, square_2);
-                OnPropertyChanged(nameof(Result));
-
-            }
-        }
-
-        public double Square_1
-        {
-            get { return square_1; }
-            set
-            {
-                square_1 = value;
-                OnPropertyChanged(nameof(Square_1));
-                Result = Class1.VolumeCon(height, square_1, square_2);
-                OnPropertyChanged(nameof(Result));
-            }
-        }
-
-        public double Square_2
-        {
-            get { return square_2; }
-            set
-            {
-                square_2 = value;
-                OnPropertyChanged(nameof(Square_2));
-                Result = Class1.VolumeCon(height, square_1, square_2);
-                OnPropertyChanged(nameof(Result));
-            }
-        }
-        public double Result
-        {
-            get { return result; }
-            set
-            {
-                result = value;
-                OnPropertyChanged(nameof(Result));
-            }
-        }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        protected void OnPropertyChanged([CallerMemberName] string name = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged.Invoke(this, new PropertyChangedEventArgs(name));
-            }
-
-
+            Height = height;
+            Square_1 = square_1;
+            Square_2 = square_2;
+            Result = result;
         }
     }
 }
